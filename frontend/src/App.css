@@ -1,0 +1,165 @@
+/* ===== GLOBAL RESET ===== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f1e6;
+  overflow: hidden;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at center, #f5f1e6 0%, #e8e2d3 100%);
+  text-align: center;
+}
+
+/* ===== SOFT GOLD GLOW (BACKGROUND EFFECT) ===== */
+.container::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(212,175,55,0.18), transparent 70%);
+  filter: blur(100px);
+  z-index: 0;
+  animation: glowMove 12s ease-in-out infinite;
+}
+
+/* ===== LOGO ===== */
+.logo {
+  width: 180px;
+  margin-bottom: 25px;
+  z-index: 1;
+  animation: logoReveal 1.8s ease;
+}
+
+/* ===== BRAND NAME ===== */
+.brand {
+  font-size: 2.8rem;
+  letter-spacing: 8px;
+  color: #1f3d2b;
+  margin: 5px 0;
+  z-index: 1;
+  animation: fadeUp 1.6s ease;
+}
+
+/* ===== COMING SOON TEXT ===== */
+.coming {
+  font-size: 1.1rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-top: 12px;
+  z-index: 1;
+}
+
+/* ===== GOLD SHIMMER ===== */
+.shine {
+  background: linear-gradient(
+    120deg,
+    #d4af37 20%,
+    #fff3b0 40%,
+    #d4af37 60%
+  );
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shine 4s linear infinite;
+}
+
+/* ===== TAGLINE ===== */
+.tagline {
+  margin-top: 12px;
+  color: #555;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  z-index: 1;
+  animation: fadeUp 2s ease;
+}
+
+/* ===== DIVIDER ===== */
+.divider {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #d4af37, transparent);
+  margin: 18px auto;
+  z-index: 1;
+}
+
+/* ===== BUTTON ===== */
+.notify-btn {
+  margin-top: 20px;
+  padding: 12px 26px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #1f3d2b, #2f5a3f);
+  color: #fff;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  z-index: 1;
+  transition: all 0.35s ease;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* BUTTON HOVER (premium feel) */
+.notify-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== FLOATING MOTION ===== */
+.container {
+  animation: floatPage 14s ease-in-out infinite;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes logoReveal {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shine {
+  to {
+    background-position: 250% center;
+  }
+}
+
+@keyframes glowMove {
+  0%, 100% {
+    transform: translate(-20px, -20px);
+  }
+  50% {
+    transform: translate(20px, 20px);
+  }
+}
+
+@keyframes floatPage {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
